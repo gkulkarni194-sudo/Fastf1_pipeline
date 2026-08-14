@@ -1,0 +1,19 @@
+features:
+  features_root: data/interim/features
+
+  telemetry:
+    derivatives:
+      max_gap_seconds: 0.5
+    braking:
+      minimum_speed_drop_kmh: 15.0
+      minimum_duration_s: 0.25
+      maximum_gap_s: 0.5
+    straight_line:
+      throttle_threshold: 95.0
+      minimum_duration_s: 1.0
+
+  corners:
+    minimum_speed_drop_for_corner_kmh: 30.0
+    maximum_distance_between_braking_and_min_speed_m: 200.0
+    minimum_corner_duration_s: 0.5
+    corner_detection_method: speed_profile_heuristic

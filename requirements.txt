@@ -6,5 +6,6 @@ pydantic
 pytest
 python-dotenv
 PyYAML
+scipy
 supabase
 pytest

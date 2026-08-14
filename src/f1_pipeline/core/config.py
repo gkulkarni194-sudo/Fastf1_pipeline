@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from f1_pipeline.core.paths import CONFIG_DIR, PROJECT_ROOT
 
 
-CONFIG_FILES = ("base.yaml", "database.yaml", "ingestion.yaml", "normalization.yaml")
+CONFIG_FILES = ("base.yaml", "database.yaml", "ingestion.yaml", "normalization.yaml", "features.yaml", "physics.yaml")
 
 
 ConfigValue = dict[str, Any] | list[Any] | str | int | float | bool | None

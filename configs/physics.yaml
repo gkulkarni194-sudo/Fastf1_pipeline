@@ -1,0 +1,70 @@
+physics:
+  schema_version: "1.0"
+  physics_root: data/processed/physics
+
+  constants:
+    air_density:
+      value: 1.225
+      unit: kg/m^3
+      provenance: assumed
+    gravity:
+      value: 9.80665
+      unit: m/s^2
+      provenance: configured
+    vehicle_mass_reference:
+      value: 798.0
+      unit: kg
+      provenance: assumed
+    rolling_resistance_reference:
+      value: 0.012
+      unit: dimensionless
+      provenance: assumed
+
+  fitting:
+    condition_number_warning: 100000000.0
+    confidence_level: 0.95
+    random_seed: 1729
+
+  filtering:
+    max_gap_seconds: 0.5
+    exclude_pit_lane: true
+    exclude_braking: true
+    exclude_drs_transitions: true
+    full_throttle_threshold: 95.0
+    coast_throttle_max: 5.0
+    min_speed_ms: 20.0
+    max_abs_longitudinal_acceleration: 8.0
+    max_abs_lateral_acceleration: 6.0
+    outlier_sigma: 4.0
+
+  models:
+    drag:
+      enabled: true
+      min_samples: 30
+      max_rmse: 2.0
+      minimum_r_squared: 0.1
+      cda_bounds: [0.1, 3.5]
+    downforce:
+      enabled: true
+      min_samples: 50
+      cla_bounds: [0.1, 10.0]
+      maximum_residual_g: 0.5
+    longitudinal:
+      enabled: true
+      min_samples: 30
+      max_rmse: 5000.0
+      minimum_r_squared: 0.1
+      drive_force_bounds: [0.0, 25000.0]
+      rolling_resistance_bounds: [0.0, 0.05]
+    tyres:
+      enabled: true
+      min_samples: 5
+      max_rmse: 3.0
+      minimum_r_squared: 0.05
+      degradation_bounds: [-0.5, 1.5]
+    cornering:
+      enabled: true
+      min_samples: 8
+      max_rmse: 2.0
+      minimum_r_squared: 0.1
+      grip_bounds: [0.5, 5.0]
