@@ -1,0 +1,12 @@
+app:
+  name: f1-physics-strategy-pipeline
+  environment: development
+  log_level: INFO
+
+paths:
+  data_dir: data
+  raw_dir: data/raw
+  interim_dir: data/interim
+  fastf1_raw_dir: data/raw/fastf1
+  fastf1_cache_dir: data/cache/fastf1
+  logs_dir: data/logs

@@ -1,0 +1,9 @@
+normalization:
+  canonical_root: data/interim/canonical
+  schema_version: "1.0"
+  preserve_unmapped_columns: true
+  duplicate_detection: true
+  asset_types:
+    - laps
+    - weather
+    - telemetry

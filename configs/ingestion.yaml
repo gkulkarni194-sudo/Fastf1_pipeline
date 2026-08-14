@@ -1,0 +1,18 @@
+ingestion:
+  enabled_sources:
+    - fastf1
+  fastf1:
+    cache_enabled: true
+    cache_dir: data/cache/fastf1
+    supported_sessions:
+      - FP1
+      - FP2
+      - FP3
+      - Q
+      - SQ
+      - S
+      - R
+  save:
+    laps: true
+    weather: true
+    driver_telemetry: true

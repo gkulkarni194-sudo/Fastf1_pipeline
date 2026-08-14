@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/interim/
+data/logs/
+.fastf1_cache/
+.ipynb_checkpoints/

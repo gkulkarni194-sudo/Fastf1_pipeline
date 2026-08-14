@@ -1,0 +1,10 @@
+fastf1
+numpy
+pandas
+pyarrow
+pydantic
+pytest
+python-dotenv
+PyYAML
+supabase
+pytest

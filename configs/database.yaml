@@ -1,0 +1,4 @@
+database:
+  provider: supabase
+  url_env: SUPABASE_URL
+  service_role_key_env: SUPABASE_SERVICE_ROLE_KEY
