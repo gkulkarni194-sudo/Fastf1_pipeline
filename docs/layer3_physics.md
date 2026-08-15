@@ -72,10 +72,8 @@ Per driver:
 ```text
 data/processed/physics/{season}/{event_slug}/{session_type}/{driver_code}/
   aero_parameters.json
-  aero_downforce_parameters.json
   longitudinal_parameters.json
   tyre_parameters.json
-  tyre_grip_parameters.json
   cornering_parameters.json
   model_diagnostics.json
   predictions.parquet

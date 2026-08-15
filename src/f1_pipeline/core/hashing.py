@@ -13,3 +13,9 @@ def file_sha256(path: str | Path, chunk_size: int = 1024 * 1024) -> str:
             digest.update(chunk)
 
     return digest.hexdigest()
+
+def hash_dict(data: dict) -> str:
+    """Generate a deterministic hash for a dictionary."""
+    import json
+    json_str = json.dumps(data, sort_keys=True, separators=(",", ":"))
+    return sha256(json_str.encode("utf-8")).hexdigest()

@@ -1,0 +1,67 @@
+{
+  "cornering": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {
+        "non_finite_or_invalid_radius": 0
+      },
+      "mae": 2.836590764487311e-16,
+      "r_squared": 1.0,
+      "residual_mean": 1.395044638272448e-17,
+      "residual_std": 9.49087220706774e-16,
+      "rmse": 9.46702229961696e-16,
+      "rows_excluded": 9,
+      "rows_input": 200,
+      "rows_used": 191,
+      "sample_count": 191,
+      "warnings": []
+    },
+    "identifiability": {
+      "assumptions": [
+        "Corner radius must be provided by Layer 2 or inferable from speed and lateral acceleration samples."
+      ],
+      "identifiable_parameters": [
+        "effective_corner_radius",
+        "lateral_acceleration_consistency"
+      ],
+      "limitations": [
+        "Layer 2 heuristic corner indices are not official FIA corner numbers."
+      ],
+      "non_identifiable_parameters": [
+        "true_track_radius",
+        "true_tyre_mu"
+      ]
+    },
+    "model_name": "lateral_acceleration_radius_consistency",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": null,
+        "confidence_interval_low": null,
+        "model_name": "lateral_acceleration_radius_consistency",
+        "model_version": "1.0",
+        "parameter_name": "effective_corner_radius",
+        "provenance": "estimated",
+        "sample_count": 191,
+        "standard_error": null,
+        "status": "accepted",
+        "unit": "m",
+        "value": 169.23747175764294
+      },
+      {
+        "confidence_interval_high": null,
+        "confidence_interval_low": null,
+        "model_name": "lateral_acceleration_radius_consistency",
+        "model_version": "1.0",
+        "parameter_name": "lateral_acceleration_consistency_rmse",
+        "provenance": "estimated",
+        "sample_count": 191,
+        "standard_error": null,
+        "status": "accepted",
+        "unit": "m/s^2",
+        "value": 9.46702229961696e-16
+      }
+    ],
+    "status": "accepted"
+  }
+}

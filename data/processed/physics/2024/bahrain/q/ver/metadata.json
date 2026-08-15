@@ -1,0 +1,122 @@
+{
+  "identifiability": {
+    "cornering": {
+      "assumptions": [
+        "Corner radius must be provided by Layer 2 or inferable from speed and lateral acceleration samples."
+      ],
+      "identifiable_parameters": [
+        "effective_corner_radius",
+        "lateral_acceleration_consistency"
+      ],
+      "limitations": [
+        "Layer 2 heuristic corner indices are not official FIA corner numbers."
+      ],
+      "non_identifiable_parameters": [
+        "true_track_radius",
+        "true_tyre_mu"
+      ]
+    },
+    "downforce": {
+      "assumptions": [
+        "High lateral-acceleration samples approximate grip-limited cornering capacity."
+      ],
+      "identifiable_parameters": [
+        "effective_downforce_parameter"
+      ],
+      "limitations": [
+        "Without direct normal load or tyre friction data, ClA is an effective envelope proxy only."
+      ],
+      "non_identifiable_parameters": [
+        "lift_coefficient",
+        "frontal_area",
+        "tyre_friction_coefficient"
+      ]
+    },
+    "drag": {
+      "assumptions": [
+        "Coastdown-like low throttle, non-braking samples approximate drag-dominated deceleration.",
+        "Vehicle mass and air density are configured or assumed, not observed unless supplied upstream."
+      ],
+      "identifiable_parameters": [
+        "effective_drag_parameter"
+      ],
+      "limitations": [
+        "Rolling resistance is not independently separated in the drag-only fit."
+      ],
+      "non_identifiable_parameters": [
+        "drag_coefficient",
+        "frontal_area",
+        "rolling_resistance_without_extra_information"
+      ]
+    },
+    "grip": {
+      "assumptions": [
+        "Peak observed lateral acceleration is a descriptive grip proxy."
+      ],
+      "identifiable_parameters": [
+        "effective_grip_parameter"
+      ],
+      "limitations": [
+        "Aerodynamic downforce, track banking, kerbs and driver margin are not separated."
+      ],
+      "non_identifiable_parameters": [
+        "true_tyre_mu",
+        "aero_load_independent_grip"
+      ]
+    },
+    "longitudinal": {
+      "assumptions": [
+        "High-throttle non-braking samples approximate drive-limited acceleration.",
+        "Vehicle mass and air density are configured or assumed."
+      ],
+      "identifiable_parameters": [
+        "effective_drive_force",
+        "effective_wheel_power"
+      ],
+      "limitations": [
+        "Drive force is an effective proxy at the wheels, not true engine output."
+      ],
+      "non_identifiable_parameters": [
+        "engine_power",
+        "drivetrain_efficiency",
+        "engine_torque_curve"
+      ]
+    },
+    "tyres": {
+      "assumptions": [
+        "Available lap-level controls proxy confounding from fuel load, traffic, DRS, braking and track state when present."
+      ],
+      "identifiable_parameters": [
+        "estimated_degradation_coefficient"
+      ],
+      "limitations": [
+        "Coefficient is descriptive unless upstream data provides adequate controls."
+      ],
+      "non_identifiable_parameters": [
+        "causal_tyre_degradation",
+        "compound_intrinsic_degradation"
+      ]
+    }
+  },
+  "model_status": {
+    "cornering": "accepted",
+    "downforce": "accepted",
+    "drag": "accepted",
+    "grip": "accepted",
+    "longitudinal": "accepted",
+    "tyres": "accepted"
+  },
+  "physics_schema_version": "1.0",
+  "request": {
+    "code_version": null,
+    "config_hash": null,
+    "driver_code": "VER",
+    "event": "Bahrain",
+    "force": true,
+    "models": [
+      "all"
+    ],
+    "season": 2024,
+    "session_type": "Q"
+  }
+}

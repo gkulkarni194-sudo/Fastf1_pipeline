@@ -9,3 +9,7 @@ PyYAML
 scipy
 supabase
 pytest
+fastapi
+uvicorn[standard]
+httpx
+psycopg2-binary

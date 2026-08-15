@@ -67,6 +67,7 @@ def estimate_tyre_degradation(laps: pd.DataFrame, config: dict[str, Any]) -> Phy
 
 
 def estimate_tyre_grip(telemetry: pd.DataFrame, config: dict[str, Any]) -> PhysicsModelResult:
+    model_cfg = config.get("models", {}).get("grip", {})
     ident = IdentifiabilityReport(
         identifiable_parameters=["effective_grip_parameter"],
         non_identifiable_parameters=["true_tyre_mu", "aero_load_independent_grip"],
@@ -77,15 +78,33 @@ def estimate_tyre_grip(telemetry: pd.DataFrame, config: dict[str, Any]) -> Physi
         return _insufficient(GRIP_MODEL_NAME, GRIP_MODEL_VERSION, len(telemetry), "missing acceleration_lateral", ident)
     g = constant_from_config(config, "gravity").value
     values = effective_grip_coefficient(pd.to_numeric(telemetry["acceleration_lateral"], errors="coerce").to_numpy(), gravity=g)
-    values = values[np.isfinite(values)]
-    if len(values) < int(config.get("models", {}).get("cornering", {}).get("min_samples", 0)):
-        return _insufficient(GRIP_MODEL_NAME, GRIP_MODEL_VERSION, len(telemetry), "too few lateral acceleration samples", ident, {"non_finite_or_missing": len(telemetry) - len(values)}, len(values))
+    finite_mask = np.isfinite(values)
+    n_non_finite = int((~finite_mask).sum())
+    values = values[finite_mask]
+    if len(values) < int(model_cfg.get("min_samples", 0)):
+        return _insufficient(GRIP_MODEL_NAME, GRIP_MODEL_VERSION, len(telemetry), "too few lateral acceleration samples", ident, {"non_finite_or_missing": n_non_finite}, len(values))
     grip = float(np.nanpercentile(values, 95))
-    status = "accepted"
+    # Diagnostics: treat the 95th-percentile as a constant prediction for summary stats
+    predicted = np.full(len(values), grip)
+    exclusion_reasons = {"non_finite_or_missing": n_non_finite} if n_non_finite else {}
+    diagnostics = regression_diagnostics(values, predicted, rows_input=len(telemetry), exclusion_reasons=exclusion_reasons)
+    status = evaluate_status(diagnostics, model_cfg, {"grip": grip})
     return PhysicsModelResult(
         model_name=GRIP_MODEL_NAME,
         model_version=GRIP_MODEL_VERSION,
-        parameters=[PhysicsParameterEstimate(parameter_name="effective_grip_parameter", value=grip, unit="dimensionless", sample_count=len(values), model_name=GRIP_MODEL_NAME, model_version=GRIP_MODEL_VERSION, status=status)],
+        parameters=[PhysicsParameterEstimate(
+            parameter_name="effective_grip_parameter",
+            value=grip,
+            unit="dimensionless",
+            standard_error=None,
+            confidence_interval_low=None,
+            confidence_interval_high=None,
+            sample_count=len(values),
+            model_name=GRIP_MODEL_NAME,
+            model_version=GRIP_MODEL_VERSION,
+            status=status,
+        )],
+        diagnostics=diagnostics,
         identifiability=ident,
         status=status,
     )

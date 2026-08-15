@@ -1,0 +1,104 @@
+{
+  "grip": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {},
+      "mae": 1.3985934515392768,
+      "r_squared": -2.4494764252138697,
+      "residual_mean": -1.3917494467354965,
+      "residual_std": 0.8914826286484545,
+      "rmse": 1.6515853272794017,
+      "rows_excluded": 0,
+      "rows_input": 200,
+      "rows_used": 200,
+      "sample_count": 200,
+      "warnings": []
+    },
+    "identifiability": {
+      "assumptions": [
+        "Peak observed lateral acceleration is a descriptive grip proxy."
+      ],
+      "identifiable_parameters": [
+        "effective_grip_parameter"
+      ],
+      "limitations": [
+        "Aerodynamic downforce, track banking, kerbs and driver margin are not separated."
+      ],
+      "non_identifiable_parameters": [
+        "true_tyre_mu",
+        "aero_load_independent_grip"
+      ]
+    },
+    "model_name": "effective_lateral_grip_proxy",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": null,
+        "confidence_interval_low": null,
+        "model_name": "effective_lateral_grip_proxy",
+        "model_version": "1.0",
+        "parameter_name": "effective_grip_parameter",
+        "provenance": "estimated",
+        "sample_count": 200,
+        "standard_error": null,
+        "status": "accepted",
+        "unit": "dimensionless",
+        "value": 2.9385254477168523
+      }
+    ],
+    "status": "accepted"
+  },
+  "tyres": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {
+        "non_finite_or_missing": 0
+      },
+      "mae": 1.7053025658242404e-14,
+      "r_squared": 1.0,
+      "residual_mean": 1.7053025658242404e-14,
+      "residual_std": 7.966774412883924e-15,
+      "rmse": 1.8709459612989102e-14,
+      "rows_excluded": 0,
+      "rows_input": 15,
+      "rows_used": 15,
+      "sample_count": 15,
+      "warnings": [
+        "possible_systematic_residual_pattern"
+      ]
+    },
+    "identifiability": {
+      "assumptions": [
+        "Available lap-level controls proxy confounding from fuel load, traffic, DRS, braking and track state when present."
+      ],
+      "identifiable_parameters": [
+        "estimated_degradation_coefficient"
+      ],
+      "limitations": [
+        "Coefficient is descriptive unless upstream data provides adequate controls."
+      ],
+      "non_identifiable_parameters": [
+        "causal_tyre_degradation",
+        "compound_intrinsic_degradation"
+      ]
+    },
+    "model_name": "controlled_linear_tyre_degradation",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": 0.08000000000000385,
+        "confidence_interval_low": 0.07999999999999913,
+        "model_name": "controlled_linear_tyre_degradation",
+        "model_version": "1.0",
+        "parameter_name": "estimated_degradation_coefficient",
+        "provenance": "estimated",
+        "sample_count": 15,
+        "standard_error": 1.2010364325881774e-15,
+        "status": "accepted",
+        "unit": "s/lap_age",
+        "value": 0.08000000000000149
+      }
+    ],
+    "status": "accepted"
+  }
+}

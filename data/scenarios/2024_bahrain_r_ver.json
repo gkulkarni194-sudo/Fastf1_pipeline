@@ -1,0 +1,22 @@
+{
+    "season": 2024,
+    "event": "Bahrain",
+    "session_type": "Q",
+    "driver_code": "VER",
+    "total_laps": 57,
+    "starting_fuel_kg": 110.0,
+    "tyre_strategy": [
+        {"compound": "SOFT", "start_lap": 1, "end_lap": 17},
+        {"compound": "HARD", "start_lap": 18, "end_lap": 37},
+        {"compound": "SOFT", "start_lap": 38, "end_lap": 57}
+    ],
+    "pit_stops": [
+        {"lap": 17, "change_compound_to": "HARD"},
+        {"lap": 37, "change_compound_to": "SOFT"}
+    ],
+    "weather": {
+        "air_temperature_c": 19.5,
+        "track_temperature_c": 24.0,
+        "rainfall_mm": 0.0
+    }
+}

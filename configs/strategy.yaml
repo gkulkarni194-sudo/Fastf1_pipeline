@@ -1,0 +1,35 @@
+strategy:
+  compounds:
+    available:
+      - SOFT
+      - MEDIUM
+      - HARD
+  
+  stops:
+    minimum: 1
+    maximum: 3
+    
+  stint:
+    minimum_laps: 5
+    
+  optimization:
+    algorithm: exhaustive
+    
+  objective:
+    primary: race_time
+    
+    race_time:
+      weight: 1.0
+      
+    risk:
+      weight: 0.0
+      
+  monte_carlo:
+    enabled: false
+    iterations: 100
+    
+  pareto:
+    enabled: true
+    
+  caching:
+    enabled: true

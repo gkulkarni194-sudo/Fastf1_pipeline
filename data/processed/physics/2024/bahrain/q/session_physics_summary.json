@@ -1,0 +1,136 @@
+{
+  "drivers": [
+    "VER"
+  ],
+  "event": "Bahrain",
+  "model_status": {
+    "cornering": "accepted",
+    "downforce": "accepted",
+    "drag": "accepted",
+    "grip": "accepted",
+    "longitudinal": "accepted",
+    "tyres": "accepted"
+  },
+  "parameters": [
+    {
+      "confidence_interval_high": 1.5000000000000004,
+      "confidence_interval_low": 1.5000000000000004,
+      "model_name": "aero_drag_coastdown",
+      "model_version": "1.0",
+      "parameter_name": "effective_drag_parameter",
+      "provenance": "estimated",
+      "sample_count": 98,
+      "standard_error": 3.368850204545089e-17,
+      "status": "accepted",
+      "unit": "m^2",
+      "value": 1.5000000000000004
+    },
+    {
+      "confidence_interval_high": 4.139042810324373,
+      "confidence_interval_low": 2.973577233246489,
+      "model_name": "effective_downforce_lateral_capacity",
+      "model_version": "1.0",
+      "parameter_name": "effective_downforce_parameter",
+      "provenance": "estimated",
+      "sample_count": 133,
+      "standard_error": 0.2973181105037971,
+      "status": "accepted",
+      "unit": "m^2",
+      "value": 3.556310021785431
+    },
+    {
+      "confidence_interval_high": 8000.0,
+      "confidence_interval_low": 8000.0,
+      "model_name": "effective_longitudinal_force_proxy",
+      "model_version": "1.0",
+      "parameter_name": "effective_drive_force",
+      "provenance": "estimated",
+      "sample_count": 102,
+      "standard_error": 7.760148504766702e-14,
+      "status": "accepted",
+      "unit": "N",
+      "value": 8000.0
+    },
+    {
+      "confidence_interval_high": null,
+      "confidence_interval_low": null,
+      "model_name": "effective_longitudinal_force_proxy",
+      "model_version": "1.0",
+      "parameter_name": "effective_wheel_power",
+      "provenance": "estimated",
+      "sample_count": 102,
+      "standard_error": null,
+      "status": "accepted",
+      "unit": "W",
+      "value": 392916.0824211554
+    },
+    {
+      "confidence_interval_high": null,
+      "confidence_interval_low": null,
+      "model_name": "effective_longitudinal_force_proxy",
+      "model_version": "1.0",
+      "parameter_name": "rolling_resistance_coefficient",
+      "provenance": "assumed",
+      "sample_count": 102,
+      "standard_error": null,
+      "status": "accepted",
+      "unit": "dimensionless",
+      "value": 0.012
+    },
+    {
+      "confidence_interval_high": 0.08000000000000385,
+      "confidence_interval_low": 0.07999999999999913,
+      "model_name": "controlled_linear_tyre_degradation",
+      "model_version": "1.0",
+      "parameter_name": "estimated_degradation_coefficient",
+      "provenance": "estimated",
+      "sample_count": 15,
+      "standard_error": 1.2010364325881774e-15,
+      "status": "accepted",
+      "unit": "s/lap_age",
+      "value": 0.08000000000000149
+    },
+    {
+      "confidence_interval_high": null,
+      "confidence_interval_low": null,
+      "model_name": "effective_lateral_grip_proxy",
+      "model_version": "1.0",
+      "parameter_name": "effective_grip_parameter",
+      "provenance": "estimated",
+      "sample_count": 200,
+      "standard_error": null,
+      "status": "accepted",
+      "unit": "dimensionless",
+      "value": 2.9385254477168523
+    },
+    {
+      "confidence_interval_high": null,
+      "confidence_interval_low": null,
+      "model_name": "lateral_acceleration_radius_consistency",
+      "model_version": "1.0",
+      "parameter_name": "effective_corner_radius",
+      "provenance": "estimated",
+      "sample_count": 191,
+      "standard_error": null,
+      "status": "accepted",
+      "unit": "m",
+      "value": 169.23747175764294
+    },
+    {
+      "confidence_interval_high": null,
+      "confidence_interval_low": null,
+      "model_name": "lateral_acceleration_radius_consistency",
+      "model_version": "1.0",
+      "parameter_name": "lateral_acceleration_consistency_rmse",
+      "provenance": "estimated",
+      "sample_count": 191,
+      "standard_error": null,
+      "status": "accepted",
+      "unit": "m/s^2",
+      "value": 9.46702229961696e-16
+    }
+  ],
+  "physics_schema_version": "1.0",
+  "season": 2024,
+  "session_type": "Q"
+}

@@ -1,0 +1,107 @@
+{
+  "downforce": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {
+        "not_above_1g_lateral_capacity": 67
+      },
+      "mae": 5492.610512397783,
+      "r_squared": -1.0466637295698749,
+      "residual_mean": 2527.3465989868296,
+      "residual_std": 6122.975840401739,
+      "rmse": 6602.759121009863,
+      "rows_excluded": 67,
+      "rows_input": 200,
+      "rows_used": 133,
+      "sample_count": 133,
+      "warnings": []
+    },
+    "identifiability": {
+      "assumptions": [
+        "High lateral-acceleration samples approximate grip-limited cornering capacity."
+      ],
+      "identifiable_parameters": [
+        "effective_downforce_parameter"
+      ],
+      "limitations": [
+        "Without direct normal load or tyre friction data, ClA is an effective envelope proxy only."
+      ],
+      "non_identifiable_parameters": [
+        "lift_coefficient",
+        "frontal_area",
+        "tyre_friction_coefficient"
+      ]
+    },
+    "model_name": "effective_downforce_lateral_capacity",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": 4.139042810324373,
+        "confidence_interval_low": 2.973577233246489,
+        "model_name": "effective_downforce_lateral_capacity",
+        "model_version": "1.0",
+        "parameter_name": "effective_downforce_parameter",
+        "provenance": "estimated",
+        "sample_count": 133,
+        "standard_error": 0.2973181105037971,
+        "status": "accepted",
+        "unit": "m^2",
+        "value": 3.556310021785431
+      }
+    ],
+    "status": "accepted"
+  },
+  "drag": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {
+        "not_coasting": 102
+      },
+      "mae": 5.603137001993933e-13,
+      "r_squared": 1.0,
+      "residual_mean": -5.603137001993933e-13,
+      "residual_std": 3.5615807349653867e-13,
+      "rmse": 6.629522175472313e-13,
+      "rows_excluded": 102,
+      "rows_input": 200,
+      "rows_used": 98,
+      "sample_count": 98,
+      "warnings": []
+    },
+    "identifiability": {
+      "assumptions": [
+        "Coastdown-like low throttle, non-braking samples approximate drag-dominated deceleration.",
+        "Vehicle mass and air density are configured or assumed, not observed unless supplied upstream."
+      ],
+      "identifiable_parameters": [
+        "effective_drag_parameter"
+      ],
+      "limitations": [
+        "Rolling resistance is not independently separated in the drag-only fit."
+      ],
+      "non_identifiable_parameters": [
+        "drag_coefficient",
+        "frontal_area",
+        "rolling_resistance_without_extra_information"
+      ]
+    },
+    "model_name": "aero_drag_coastdown",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": 1.5000000000000004,
+        "confidence_interval_low": 1.5000000000000004,
+        "model_name": "aero_drag_coastdown",
+        "model_version": "1.0",
+        "parameter_name": "effective_drag_parameter",
+        "provenance": "estimated",
+        "sample_count": 98,
+        "standard_error": 3.368850204545089e-17,
+        "status": "accepted",
+        "unit": "m^2",
+        "value": 1.5000000000000004
+      }
+    ],
+    "status": "accepted"
+  }
+}

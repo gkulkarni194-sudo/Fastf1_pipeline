@@ -1,0 +1,75 @@
+simulation:
+  schema_version: "1.0"
+  default_mode: deterministic
+
+  constants:
+    base_vehicle_mass_kg: 798.0
+    min_vehicle_mass_kg: 796.0
+
+  fuel:
+    consumption_per_lap_kg: 1.74
+    consumption_stdev_kg: 0.02
+    lap_time_effect_per_kg: 0.035
+    starting_fuel_kg: 110.0
+
+  track:
+    model_type: empirical
+    base_lap_time_seconds: 93.0
+    total_distance_m: 5412.0
+    number_of_segments: 10
+    evolution_model: linear
+    evolution_rate_per_lap: -0.01
+    baseline_grip_multiplier: 1.0
+
+  tyres:
+    compounds:
+      SOFT:
+        base_grip_multiplier: 1.00
+        degradation_rate_per_lap: 0.06
+        cliff_age: 25
+      MEDIUM:
+        base_grip_multiplier: 0.97
+        degradation_rate_per_lap: 0.04
+        cliff_age: 35
+      HARD:
+        base_grip_multiplier: 0.94
+        degradation_rate_per_lap: 0.025
+        cliff_age: 45
+      INTERMEDIATE:
+        base_grip_multiplier: 0.90
+        degradation_rate_per_lap: 0.03
+        cliff_age: 40
+      WET:
+        base_grip_multiplier: 0.85
+        degradation_rate_per_lap: 0.02
+        cliff_age: 50
+    grip_lap_time_sensitivity: 0.3
+
+  weather:
+    model: static
+    default_air_temperature_c: 30.0
+    default_track_temperature_c: 45.0
+    rain_lap_time_penalty_fraction: 0.08
+    temperature_sensitivity_per_degree_c: 0.005
+
+  pit_stop:
+    default_loss_seconds: 22.0
+    loss_stdev_seconds: 0.5
+    min_loss_seconds: 18.0
+    max_loss_seconds: 30.0
+
+  monte_carlo:
+    enabled: false
+    iterations: 1000
+    distributions:
+      drag_parameter_stdev_fraction: 0.05
+      downforce_parameter_stdev_fraction: 0.05
+      degradation_rate_stdev_fraction: 0.10
+      fuel_consumption_stdev_fraction: 0.02
+      pit_loss_stdev_seconds: 0.5
+
+  validation:
+    max_lap_time_seconds: 300.0
+    min_lap_time_seconds: 60.0
+    max_fuel_kg: 150.0
+    max_tyre_age: 80

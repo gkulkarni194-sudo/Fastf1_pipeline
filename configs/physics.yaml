@@ -62,6 +62,10 @@ physics:
       max_rmse: 3.0
       minimum_r_squared: 0.05
       degradation_bounds: [-0.5, 1.5]
+    grip:
+      enabled: true
+      min_samples: 20
+      grip_bounds: [0.5, 5.0]
     cornering:
       enabled: true
       min_samples: 8

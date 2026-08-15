@@ -1,0 +1,82 @@
+{
+  "longitudinal": {
+    "diagnostics": {
+      "convergence_status": "converged",
+      "exclusion_reasons": {
+        "not_full_throttle": 98
+      },
+      "mae": 6.687461042448002e-13,
+      "r_squared": 0.0,
+      "residual_mean": 5.617467275656322e-13,
+      "residual_std": 5.436536515439674e-13,
+      "rmse": 7.798852727433261e-13,
+      "rows_excluded": 98,
+      "rows_input": 200,
+      "rows_used": 102,
+      "sample_count": 102,
+      "warnings": []
+    },
+    "identifiability": {
+      "assumptions": [
+        "High-throttle non-braking samples approximate drive-limited acceleration.",
+        "Vehicle mass and air density are configured or assumed."
+      ],
+      "identifiable_parameters": [
+        "effective_drive_force",
+        "effective_wheel_power"
+      ],
+      "limitations": [
+        "Drive force is an effective proxy at the wheels, not true engine output."
+      ],
+      "non_identifiable_parameters": [
+        "engine_power",
+        "drivetrain_efficiency",
+        "engine_torque_curve"
+      ]
+    },
+    "model_name": "effective_longitudinal_force_proxy",
+    "model_version": "1.0",
+    "parameters": [
+      {
+        "confidence_interval_high": 8000.0,
+        "confidence_interval_low": 8000.0,
+        "model_name": "effective_longitudinal_force_proxy",
+        "model_version": "1.0",
+        "parameter_name": "effective_drive_force",
+        "provenance": "estimated",
+        "sample_count": 102,
+        "standard_error": 7.760148504766702e-14,
+        "status": "accepted",
+        "unit": "N",
+        "value": 8000.0
+      },
+      {
+        "confidence_interval_high": null,
+        "confidence_interval_low": null,
+        "model_name": "effective_longitudinal_force_proxy",
+        "model_version": "1.0",
+        "parameter_name": "effective_wheel_power",
+        "provenance": "estimated",
+        "sample_count": 102,
+        "standard_error": null,
+        "status": "accepted",
+        "unit": "W",
+        "value": 392916.0824211554
+      },
+      {
+        "confidence_interval_high": null,
+        "confidence_interval_low": null,
+        "model_name": "effective_longitudinal_force_proxy",
+        "model_version": "1.0",
+        "parameter_name": "rolling_resistance_coefficient",
+        "provenance": "assumed",
+        "sample_count": 102,
+        "standard_error": null,
+        "status": "accepted",
+        "unit": "dimensionless",
+        "value": 0.012
+      }
+    ],
+    "status": "accepted"
+  }
+}

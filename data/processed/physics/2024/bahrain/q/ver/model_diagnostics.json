@@ -1,0 +1,98 @@
+{
+  "cornering": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {
+      "non_finite_or_invalid_radius": 0
+    },
+    "mae": 2.836590764487311e-16,
+    "r_squared": 1.0,
+    "residual_mean": 1.395044638272448e-17,
+    "residual_std": 9.49087220706774e-16,
+    "rmse": 9.46702229961696e-16,
+    "rows_excluded": 9,
+    "rows_input": 200,
+    "rows_used": 191,
+    "sample_count": 191,
+    "warnings": []
+  },
+  "downforce": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {
+      "not_above_1g_lateral_capacity": 67
+    },
+    "mae": 5492.610512397783,
+    "r_squared": -1.0466637295698749,
+    "residual_mean": 2527.3465989868296,
+    "residual_std": 6122.975840401739,
+    "rmse": 6602.759121009863,
+    "rows_excluded": 67,
+    "rows_input": 200,
+    "rows_used": 133,
+    "sample_count": 133,
+    "warnings": []
+  },
+  "drag": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {
+      "not_coasting": 102
+    },
+    "mae": 5.603137001993933e-13,
+    "r_squared": 1.0,
+    "residual_mean": -5.603137001993933e-13,
+    "residual_std": 3.5615807349653867e-13,
+    "rmse": 6.629522175472313e-13,
+    "rows_excluded": 102,
+    "rows_input": 200,
+    "rows_used": 98,
+    "sample_count": 98,
+    "warnings": []
+  },
+  "grip": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {},
+    "mae": 1.3985934515392768,
+    "r_squared": -2.4494764252138697,
+    "residual_mean": -1.3917494467354965,
+    "residual_std": 0.8914826286484545,
+    "rmse": 1.6515853272794017,
+    "rows_excluded": 0,
+    "rows_input": 200,
+    "rows_used": 200,
+    "sample_count": 200,
+    "warnings": []
+  },
+  "longitudinal": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {
+      "not_full_throttle": 98
+    },
+    "mae": 6.687461042448002e-13,
+    "r_squared": 0.0,
+    "residual_mean": 5.617467275656322e-13,
+    "residual_std": 5.436536515439674e-13,
+    "rmse": 7.798852727433261e-13,
+    "rows_excluded": 98,
+    "rows_input": 200,
+    "rows_used": 102,
+    "sample_count": 102,
+    "warnings": []
+  },
+  "tyres": {
+    "convergence_status": "converged",
+    "exclusion_reasons": {
+      "non_finite_or_missing": 0
+    },
+    "mae": 1.7053025658242404e-14,
+    "r_squared": 1.0,
+    "residual_mean": 1.7053025658242404e-14,
+    "residual_std": 7.966774412883924e-15,
+    "rmse": 1.8709459612989102e-14,
+    "rows_excluded": 0,
+    "rows_input": 15,
+    "rows_used": 15,
+    "sample_count": 15,
+    "warnings": [
+      "possible_systematic_residual_pattern"
+    ]
+  }
+}
